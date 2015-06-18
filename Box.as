@@ -34,7 +34,13 @@
 			this.y = _y;
 			createCollider();
 			//this.blendMode = BlendMode.INVERT;
-			updateBoundBox();
+		}
+		
+		private function createCollider():void
+		{
+			collider = new Collider(this);
+			trace(collider.botton);
+			trace(collider.right);
 		}
 		
 		private function changeColor(r:uint, g:uint, b:uint):void
@@ -57,17 +63,13 @@
 			this.scaleY = this.scaleY/2;
 			xVelocity *= velocityMultiplier;
 			yVelocity *= velocityMultiplier;
-			updateBoundBox();
+			updateCollider();
 			changeColor(rColor*(gColor/clickedTimes),gColor/clickedTimes, bColor);
 		}
 		
-		private function updateBoundBox():void
+		private function updateCollider():void
 		{
-			top = 0;
-			left = 0;
-			botton = this.height;
-			right = this.width;
-			trace(top, left, botton, right);
+			collider.update();
 		}
 		
 		public function invertXDirection():void
@@ -105,7 +107,10 @@
 			return velocityMultiplier;
 		}
 		
-		public function getCollider():
+		public function getCollider():Collider
+		{
+			return collider;
+		}
 
 	}
 	

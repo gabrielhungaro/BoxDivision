@@ -200,11 +200,8 @@
 						vectorOfBoxes[i].invertYDirection();
 					}
 					for(var j:int=0; j <vectorOfBoxes.length; j++){
-						if(vectorOfBoxes[i].){
-							
-						}
+						
 					}
-					
 				}
 			}
 		}

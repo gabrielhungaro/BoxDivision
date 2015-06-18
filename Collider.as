@@ -9,7 +9,16 @@
 		public var left:Number;
 		public var right:Number;
 		
-		public function Collider() {
+		public function Collider(value:MovieClip) {
+			obj = value;
+			top = 0;
+			left = 0;
+			botton = obj.height;
+			right = obj.width;
+		}
+		
+		public function update():void
+		{
 			top = 0;
 			left = 0;
 			botton = obj.height;
